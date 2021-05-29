@@ -1,0 +1,19 @@
+﻿<Window x:Class="CalculatorApplicationMVVM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalculatorApplicationMVVM.UserControls"
+        xmlns:ViewModels="clr-namespace:CalculatorApplicationMVVM.ViewModel"
+        mc:Ignorable="d"
+        Title="Calculator Application" Height="450" Width="800">
+    <Window.DataContext>
+        <ViewModels:MainViewModel/>
+    </Window.DataContext>
+  
+
+    <Grid>
+        <local:TextView DataContext="{Binding Path=objButtonControlViewModel._TextView}" />
+        <local:UserControls DataContext="{Binding Path=objButtonControlViewModel}"  />
+    </Grid>
+</Window>
